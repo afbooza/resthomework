@@ -6,11 +6,14 @@ var express = require('express'),
   Order = require('./api/models/orderModel'),
   Inventory = require('./api/models/inventoryModel'),
   bodyParser = require('body-parser');
+
+//const DB_URL = process.env.DATABASE_URL;
   
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://afbusa:afb123@ds225010.mlab.com:25010/api-secure');  //MOVE TO CONFIG VARS
-//'mongodb://afbusa:afb123@ds225010.mlab.com:25010/api-secure'
+mongoose.connect(process.env.DATABASE_URL);  
+//MOVE TO CONFIG VARS process.env.MONGDB_URI
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -24,4 +27,4 @@ inventoryRoutes(app);
 app.listen(port);
 
 
-console.log('todo list RESTful API server started on: ' + port);
+console.log('RESTful API server started on: ' + port);

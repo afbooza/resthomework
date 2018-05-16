@@ -1,4 +1,4 @@
 // config.js
 module.exports = {
-    'secret': 'supersecret' //MOVE TO CONFIG
+    'secret': process.env.secret //MOVE TO CONFIG
   };

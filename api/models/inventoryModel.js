@@ -6,7 +6,8 @@ var Schema = mongoose.Schema;
 var InventorySchema = new Schema({
     productId: {
         type: Number,
-        required: true
+        required: true,
+        unique:true
     },
     count: {
         type: Number,
