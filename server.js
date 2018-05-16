@@ -9,9 +9,8 @@ var express = require('express'),
   
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB);  //MOVE TO CONFIG VARS
-
-
+mongoose.connect('mongodb://afbusa:afb123@ds225010.mlab.com:25010/api-secure');  //MOVE TO CONFIG VARS
+//'mongodb://afbusa:afb123@ds225010.mlab.com:25010/api-secure'
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
